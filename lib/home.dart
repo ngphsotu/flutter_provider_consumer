@@ -1,33 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class MySettings extends ChangeNotifier {
-  String text = 'bhasdasd';
-  Color color = Colors.red;
-
-  void changeText() {
-    if (text == 'Hello') {
-      text = 'World';
-    } else {
-      text = 'Hello';
-    }
-    notifyListeners();
-  }
-
-  void changeColor() {
-    if (color == Colors.red) {
-      color = Colors.green;
-    } else {
-      color = Colors.red;
-    }
-    notifyListeners();
-  }
-
-  set newColor(Color newColor) {
-    color = newColor;
-    notifyListeners();
-  }
-}
+import 'settings.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -63,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   ElevatedButton(
-                    child: const Text('Change Color to Yellow'),
+                    child: const Text('Change Color to Orange'),
                     onPressed: () {
                       mySettings.newColor = Colors.orange;
                       Navigator.pop(context);
